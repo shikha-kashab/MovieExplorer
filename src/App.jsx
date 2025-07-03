@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { Route, Router, Routes } from "react-router-dom";
 
+import Footer from "./components/Footer";
+import HeaderNavBar from "./components/HeaderNavBar";
+import AboutUsScreen from "./scrreens/AboutUsScreen";
+import ContactUsScreen from "./scrreens/ContactUsScreen";
+import CatalogueScreen from "./scrreens/CatalogueScreen";
+import TvChannelsScreen from "./scrreens/TvChannelsScreen";
+import HomeScreen from "./scrreens/HomeScreen";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <HeaderNavBar />
 
-export default App
+      <div className="h-[300px] w-full">
+        <Routes>
+          <Route path="/home" element={<HomeScreen />} />
+          <Route path="/AboutUs" element={<AboutUsScreen />} />
+          <Route path="/ContactUs" element={<ContactUsScreen />} />
+          <Route path="/CatalogueScreen" element={<CatalogueScreen />} />
+          <Route path="/TvChannelsScreen" element={<TvChannelsScreen />} />
+        </Routes>
+      </div>
+
+      <Footer />
+    </>
+  );
+}
+export default App;
