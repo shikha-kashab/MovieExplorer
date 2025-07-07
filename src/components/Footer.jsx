@@ -1,4 +1,7 @@
+import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { Link } from "react-router-dom";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import React from "react";
 
 const Footer = () => {
@@ -12,46 +15,43 @@ const Footer = () => {
           {/* Navigation Links */}
           <ul className="flex space-x-6 text-sm">
             <li>
-              <a href="#" className="hover:text-gray-400">
+              <Link to={"/"} className="hover:text-gray-400">
                 Home
-              </a>
+              </Link>
             </li>
+
             <li>
-              <a href="#" className="hover:text-gray-400"></a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-gray-400">
+              <Link to={"/Catalogue"} className="hover:text-gray-400">
                 Catalogue
-              </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link to={"/OurProcess"} className="hover:text-gray-400">
+                Our Process
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-400">
-                Shop
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-gray-400">
-                Sports
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-gray-400">
-                TV Channels
-              </a>
+              <Link to={"/AboutUs"} className="hover:text-gray-400">
+                About Us
+              </Link>
             </li>
           </ul>
 
           {/* Social Media Icons (use emoji or replace with icons) */}
           <div className="flex space-x-4 text-lg">
-            <a href="#" aria-label="Facebook" className="hover:text-blue-400">
-            </a>
             <a
-              href="#"
-              aria-label="Twitter"
-              className="hover:text-blue-300"
-            ></a>
+              target="_blank"
+              href="https://github.com/shikha-kashab/MovieExplorer"
+              aria-label="Instagram"
+              className="hover:text-pink-400">
+              <GitHubIcon />
+            </a>
             <a href="#" aria-label="Instagram" className="hover:text-pink-400">
               <InstagramIcon />
+            </a>
+            <a href="#" aria-label="Instagram" className="hover:text-pink-400">
+              <LinkedInIcon />
             </a>
           </div>
         </div>
